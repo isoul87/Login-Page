@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Login page</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <div class="wrapper">
@@ -13,14 +14,14 @@
         <h1>Login</h1>
         <div class="input-box">
           <input type="text" placeholder="Username" required>
-          <i class='bx bxs-user' ></i>
+          <i class='bx bxs-user lg-inp' ></i>
         </div>
         <div class="input-box">
           <input type="password" placeholder="Password" required>
-          <i class='bx bxs-lock-alt' ></i>
+          <i class='bx bxs-lock-alt lg-inp' ></i>
         </div>
         <div class="remember-forget">
-          <label><input type="checkbox" value="">Remember Me</label>
+          <label class="label"><input type="checkbox" value="">Remember Me</label>
           <a href="">Forget Password</a>
         </div>
         <button type="submit" class="btn">Login</button>
@@ -30,5 +31,17 @@
       </form>
     </div>
     <a class="license" href="http://www.freepik.com">Image By pikisuperstar / Freepik</a>
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script>
+      gsap.from(".input-box", { opacity: 0, duration: 3, ease:"back.out(1.7)"});
+      gsap.from(".wrapper h1", {opacity: 0, duration: 1.5})
+      gsap.from(".remember-forget label", {opacity: 0, x: -100, duration: 1.5, delay: 1})
+      gsap.from(".remember-forget a", {opacity: 0, x: 100, duration: 1.5, delay: 1})
+      gsap.from(".wrapper button", {opacity: 0, y: 100, duration: 1.5, delay: 1})
+      gsap.from(".register-link p", {opacity: 0, duration: 4.5, delay: 1})
+    </script>
+
+    
 </body>
 </html>
